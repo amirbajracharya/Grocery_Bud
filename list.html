@@ -35,7 +35,16 @@
         deleteButton.textContent = "Delete";
         deleteButton.onclick = function () {
           li.remove();
+
+          const editButton = document.createElement("button");
+          editButton.textContent = "Edit";
+          editButton.onclick = function () {
+            groceryInput.value = groceryItem;
+            dateInput.value = date;
+            li.remove();
+          };
         };
+        li.appendChild(editButton);
 
         li.appendChild(deleteButton);
         groceryList.appendChild(li);
