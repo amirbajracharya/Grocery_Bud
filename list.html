@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Grocery bud</h2>
+    <form id="grocery-form">
+      <input type="text" id="grocery-input" placeholder="e.g. eggs" />
+      <input type="date" id="date-input" />
+      <button type="submit">Add Item</button>
+    </form>
+    <div id="grocery-container">
+      <ul id="grocery-list"></ul>
+    </div>
+    <script>
+      const form = document.getElementById("grocery-form");
+      const groceryList = document.getElementById("grocery-list");
+      const groceryInput = document.getElementById("grocery-input");
+      const dateInput = document.getElementById("date-input");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const groceryItem = groceryInput.value;
+        const date = dateInput.value;
+
+        if (groceryItem === "") return;
+        const li = document.createElement("li");
+        li.textContent = groceryItem + (date ? " (" + date + ")" : "");
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.onclick = function () {
+          li.remove();
+        };
+
+        li.appendChild(deleteButton);
+        groceryList.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
