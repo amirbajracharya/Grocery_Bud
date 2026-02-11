@@ -32,8 +32,12 @@
         const groceryItem = groceryInput.value;
         const date = dateInput.value;
 
-        if (groceryItem === "") return;
+        if (groceryItem === "") return alert("Item cannot be empty");
+
+        if (date === "") return alert("Please select a date");
+
         const li = document.createElement("li");
+
         li.textContent = groceryItem + (date ? " (" + date + ")" : "");
 
         const editButton = document.createElement("button");
@@ -41,6 +45,7 @@
         editButton.onclick = function () {
           groceryInput.value = groceryItem;
           dateInput.value = date;
+          submitBtn.textContent = "Update";
           li.remove();
         };
 
@@ -56,6 +61,7 @@
 
         groceryInput.value = "";
         dateInput.value = "";
+        submitBtn.textContent = "Add Items";
       });
     </script>
   </body>

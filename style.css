@@ -58,5 +58,4 @@ button[type="submit"]:hover {
   width: 100%;
   max-width: 450px;
   padding: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
