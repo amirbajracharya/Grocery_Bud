@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Grocery bud</h2>
-    <form id="grocery-form">
-      <input type="text" id="grocery-input" placeholder="e.g. eggs" />
-      <input type="date" id="date-input" />
-      <button type="submit">Add Item</button>
-    </form>
-    <div id="grocery-container">
-      <ul id="grocery-list"></ul>
+    <div class="container">
+      <h2>Grocery bud</h2>
+      <form id="grocery-form">
+        <input type="text" id="grocery-input" placeholder="Add items" />
+        <input type="date" id="date-input" />
+        <button type="submit">Add Items</button>
+      </form>
+
+      <div id="grocery-container">
+        <ul id="grocery-list"></ul>
+      </div>
     </div>
+
     <script>
       const form = document.getElementById("grocery-form");
       const groceryList = document.getElementById("grocery-list");
@@ -31,23 +36,26 @@
         const li = document.createElement("li");
         li.textContent = groceryItem + (date ? " (" + date + ")" : "");
 
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.onclick = function () {
+          groceryInput.value = groceryItem;
+          dateInput.value = date;
+          li.remove();
+        };
+
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
         deleteButton.onclick = function () {
           li.remove();
-
-          const editButton = document.createElement("button");
-          editButton.textContent = "Edit";
-          editButton.onclick = function () {
-            groceryInput.value = groceryItem;
-            dateInput.value = date;
-            li.remove();
-          };
         };
-        li.appendChild(editButton);
 
+        li.appendChild(editButton);
         li.appendChild(deleteButton);
         groceryList.appendChild(li);
+
+        groceryInput.value = "";
+        dateInput.value = "";
       });
     </script>
   </body>

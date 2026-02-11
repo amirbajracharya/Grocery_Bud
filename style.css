@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, red, #a75619);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container {
+  border: 1px solid black;
+  border-radius: 20px;
+  background: lightgray;
+  margin-top: 60px;
+  width: auto;
+  padding: 10px;
+  font-size: xx-large;
+
+  
+}
