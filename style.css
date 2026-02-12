@@ -55,7 +55,7 @@ button[type="submit"]:hover {
   border-radius: 20px;
   background: linear-gradient(lightgray, white);
   margin-top: 60px;
-  width: 100%;
+  width: 45%;
   max-width: 420px;
   padding: 2rem;
 }
@@ -64,7 +64,15 @@ button[type="submit"]:hover {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 8px;
-  gap: 10px;
+  gap: 15px;
+}
+
+#grocery-list li input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+#grocery-list li button {
+  font-size: 1.02rem;
 }
 
 #grocery-list li div {
