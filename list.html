@@ -41,11 +41,13 @@
         li.textContent = groceryItem + (date ? " (" + date + ")" : "");
 
         const editButton = document.createElement("button");
+        const submitBtn = form.querySelector("button");
+
         editButton.textContent = "Edit";
         editButton.onclick = function () {
           groceryInput.value = groceryItem;
           dateInput.value = date;
-          submitBtn.textContent = "Update";
+          submitBtn.textContent = "Update Item";
           li.remove();
         };
 
