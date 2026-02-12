@@ -38,8 +38,19 @@
 
         const li = document.createElement("li");
 
-        li.textContent = groceryItem + (date ? " (" + date + ")" : "");
+        //for checkbox
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
 
+        li.appendChild(checkbox);
+
+        const textNode = document.createTextNode(
+          groceryItem + (date ? " (" + date + ")" : ""),
+        );
+
+        li.appendChild(textNode);
+
+        const btnGroup = document.createElement("div");
         const editButton = document.createElement("button");
         const submitBtn = form.querySelector("button");
 
@@ -57,8 +68,9 @@
           li.remove();
         };
 
-        li.appendChild(editButton);
-        li.appendChild(deleteButton);
+        btnGroup.appendChild(editButton);
+        btnGroup.appendChild(deleteButton);
+        li.appendChild(btnGroup);
         groceryList.appendChild(li);
 
         groceryInput.value = "";

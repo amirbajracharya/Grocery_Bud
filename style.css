@@ -3,7 +3,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
   background: linear-gradient(135deg, dimgray, black);
   padding: 20px;
@@ -58,4 +58,16 @@ button[type="submit"]:hover {
   width: 100%;
   max-width: 420px;
   padding: 2rem;
+}
+#grocery-list li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+#grocery-list li div {
+  display: flex;
+  gap: 5px;
 }
