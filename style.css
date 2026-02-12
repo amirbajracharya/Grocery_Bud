@@ -55,9 +55,11 @@ button[type="submit"]:hover {
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.1);
   margin-top: 60px;
-  width: 45%;
+  width: 50vh;
   max-width: 420px;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 #grocery-list li {
   display: flex;
@@ -78,4 +80,15 @@ button[type="submit"]:hover {
 #grocery-list li div {
   display: flex;
   gap: 5px;
+}
+
+#grocery-container {
+  flex: 1;
+}
+#empty-message {
+  text-align: center;
+  color: snow;
+  font-style: bold;
+  margin-top: 10px;
+  font-size: large;
 }

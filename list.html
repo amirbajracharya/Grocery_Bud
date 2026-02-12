@@ -13,6 +13,7 @@
   <body>
     <div class="container">
       <h2>Grocery bud</h2>
+
       <form id="grocery-form">
         <input type="text" id="grocery-input" placeholder="Add items" />
         <input type="date" id="date-input" />
@@ -22,6 +23,7 @@
       <div id="grocery-container">
         <ul id="grocery-list"></ul>
       </div>
+      <p id="empty-message">No items are added!</p>
     </div>
 
     <script>
@@ -29,6 +31,15 @@
       const groceryList = document.getElementById("grocery-list");
       const groceryInput = document.getElementById("grocery-input");
       const dateInput = document.getElementById("date-input");
+      const emptyMessage = document.getElementById("empty-message");
+
+      function checkEmptyMessage() {
+        if (groceryList.children.length === 0) {
+          emptyMessage.style.display = "block";
+        } else {
+          emptyMessage.style.display = "none";
+        }
+      }
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -72,17 +83,20 @@
         deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
         deleteButton.onclick = function () {
           li.remove();
+          checkEmptyMessage();
         };
 
         btnGroup.appendChild(editButton);
         btnGroup.appendChild(deleteButton);
         li.appendChild(btnGroup);
         groceryList.appendChild(li);
+        checkEmptyMessage();
 
         groceryInput.value = "";
         dateInput.value = "";
         submitBtn.textContent = "Add Items";
       });
+      checkEmptyMessage();
     </script>
   </body>
 </html>
