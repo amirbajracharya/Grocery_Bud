@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  background: linear-gradient(135deg, dimgray, black);
+  background: linear-gradient(135deg, MidnightBlue, DarkOrchid, Magenta);
   padding: 20px;
 }
 
@@ -53,7 +53,7 @@ button[type="submit"]:hover {
 .container {
   border: 1px solid black;
   border-radius: 20px;
-  background: linear-gradient(lightgray, white);
+  background: rgba(255, 255, 255, 0.1);
   margin-top: 60px;
   width: 45%;
   max-width: 420px;
